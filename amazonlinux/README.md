@@ -1,4 +1,4 @@
-# amazonlinux2
+# amazonlinux
 
 ## 概要
 
