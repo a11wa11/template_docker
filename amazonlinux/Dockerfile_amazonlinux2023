@@ -1,0 +1,11 @@
+ARG TARGETPLATFORM
+FROM --platform=${TARGETPLATFORM:-linux/amd64} amazonlinux:2023.7.20250512.0
+
+WORKDIR /root
+
+RUN dnf update -y && dnf install -y langpacks-ja && \
+    dnf install -y which tar make bash-completion zip && \
+    dnf install -y awscli nodejs-npm && \
+    cp /usr/share/zoneinfo/Japan /etc/localtime
+
+COPY nodejs/ /root/nodejs/
