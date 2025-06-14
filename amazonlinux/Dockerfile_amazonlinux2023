@@ -1,5 +1,7 @@
 ARG TARGETPLATFORM
 FROM --platform=${TARGETPLATFORM:-linux/amd64} amazonlinux:2023.7.20250512.0
+ENV AWS_PAGER="" \
+        PAGER=cat
 
 WORKDIR /root
 
